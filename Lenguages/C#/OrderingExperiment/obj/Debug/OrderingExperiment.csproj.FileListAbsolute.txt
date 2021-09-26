@@ -1,0 +1,15 @@
+C:\Users\Financiero\source\repos\Ordering-Experiment\Lenguages\C#\OrderingExperiment\bin\Debug\OrderingExperiment.exe.config
+C:\Users\Financiero\source\repos\Ordering-Experiment\Lenguages\C#\OrderingExperiment\bin\Debug\OrderingExperiment.exe
+C:\Users\Financiero\source\repos\Ordering-Experiment\Lenguages\C#\OrderingExperiment\bin\Debug\OrderingExperiment.pdb
+C:\Users\Financiero\source\repos\Ordering-Experiment\Lenguages\C#\OrderingExperiment\obj\Debug\OrderingExperiment.csproj.AssemblyReference.cache
+C:\Users\Financiero\source\repos\Ordering-Experiment\Lenguages\C#\OrderingExperiment\obj\Debug\MainWindow.g.cs
+C:\Users\Financiero\source\repos\Ordering-Experiment\Lenguages\C#\OrderingExperiment\obj\Debug\App.g.cs
+C:\Users\Financiero\source\repos\Ordering-Experiment\Lenguages\C#\OrderingExperiment\obj\Debug\OrderingExperiment_MarkupCompile.cache
+C:\Users\Financiero\source\repos\Ordering-Experiment\Lenguages\C#\OrderingExperiment\obj\Debug\OrderingExperiment_MarkupCompile.lref
+C:\Users\Financiero\source\repos\Ordering-Experiment\Lenguages\C#\OrderingExperiment\obj\Debug\MainWindow.baml
+C:\Users\Financiero\source\repos\Ordering-Experiment\Lenguages\C#\OrderingExperiment\obj\Debug\OrderingExperiment.g.resources
+C:\Users\Financiero\source\repos\Ordering-Experiment\Lenguages\C#\OrderingExperiment\obj\Debug\OrderingExperiment.Properties.Resources.resources
+C:\Users\Financiero\source\repos\Ordering-Experiment\Lenguages\C#\OrderingExperiment\obj\Debug\OrderingExperiment.csproj.GenerateResource.cache
+C:\Users\Financiero\source\repos\Ordering-Experiment\Lenguages\C#\OrderingExperiment\obj\Debug\OrderingExperiment.csproj.CoreCompileInputs.cache
+C:\Users\Financiero\source\repos\Ordering-Experiment\Lenguages\C#\OrderingExperiment\obj\Debug\OrderingExperiment.exe
+C:\Users\Financiero\source\repos\Ordering-Experiment\Lenguages\C#\OrderingExperiment\obj\Debug\OrderingExperiment.pdb
