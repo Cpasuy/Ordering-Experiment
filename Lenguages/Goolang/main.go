@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"encoding/csv"
-	"fmt"
 	"os"
 	"strconv"
 	"time"
@@ -13,7 +12,7 @@ var readerBig string
 var readerSmall string
 var arraySmall [100]int64
 var arrayBig [10000]int64
-var repetition [1]string
+var repetition []string
 var line string
 
 func main() {
@@ -56,43 +55,38 @@ func createArraysSmalls(path string) {
 
 }
 func tratementsAll() {
-	file, err := os.Create("TratamentsGoolang.csv")
+	file, err := os.Create("C:/Users/Financiero/source/repos/Ordering-Experiment/data/TratamentsGoolang.csv")
 	if err != nil {
 	}
 	writer := csv.NewWriter(file)
 	for i := 0; i < 100; i++ {
-
 		start := time.Now()
 		bubbleSortBig(arrayBig)
 		duration := time.Since(start)
 		duringtime := duration.Milliseconds()
 		line = line + strconv.FormatInt(int64(duringtime), 10) + "|"
-		repetition[0] = line
 
 		start = time.Now()
 		bubbleSortSmall(arraySmall)
 		duration = time.Since(start)
 		duringtime = duration.Milliseconds()
 		line = line + strconv.FormatInt(int64(duringtime), 10) + "|"
-		repetition[0] = line
 
 		start = time.Now()
 		insertionSortBig(arrayBig)
 		duration = time.Since(start)
 		duringtime = duration.Milliseconds()
 		line = line + strconv.FormatInt(int64(duringtime), 10) + "|"
-		repetition[0] = line
 
 		start = time.Now()
 		insertionSortSmall(arraySmall)
 		duration = time.Since(start)
 		duringtime = duration.Milliseconds()
 		line = line + strconv.FormatInt(int64(duringtime), 10) + "|"
-		fmt.Println("HOLA")
-		repetition[0] = line
+		repetition = append(repetition, line)
 
-		//err = writer.Write(repetition)
-		repetition[0] = ""
+		err = writer.Write(repetition)
+
 	}
 
 }
