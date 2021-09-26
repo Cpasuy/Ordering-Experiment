@@ -1,8 +1,22 @@
+import java.io.*
+
+
 fun main(args: Array<String>) {
     var myArray = mutableListOf(7,1,9,3,22,6)
     val result = bubbleSort(myArray)
     println(result)
 }
+
+
+
+fun readFileLineByLineUsingForEachLine(fileName: String):List<Int>
+{
+    val f = File(a)
+    val array = arrayOf<Int>(100)
+    File(a).read
+}
+
+
 fun bubbleSort(array: MutableList<Int>): List<Int> {
     if (array.size == 0) return array
     var isSorted = false
@@ -23,4 +37,22 @@ fun swap(array: MutableList<Int>, i: Int, j: Int) {
     val temp = array[j]
     array[j] = array[i]
     array[i] = temp
+}
+
+
+fun insertionSort(items:MutableList<Int>):List<Int>{
+    if (items.isEmpty() || items.size<2){
+        return items
+    }
+    for (count in 1..items.count() - 1){
+        // println(items)
+        val item = items[count]
+        var i = count
+        while (i>0 && item < items[i - 1]){
+            items[i] = items[i - 1]
+            i -= 1
+        }
+        items[i] = item
+    }
+    return items
 }
