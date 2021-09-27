@@ -1,6 +1,7 @@
 import java.io.*
 
 
+
 fun main(args: Array<String>) {
     var myArray = mutableListOf(7,1,9,3,22,6)
     val result = bubbleSort(myArray)
@@ -17,7 +18,7 @@ fun readFileLineByLineUsingForEachLine(fileName: String):List<Int>
 }
 
 
-fun bubbleSort(array: MutableList<Int>): List<Int> {
+fun bubbleSort(array: MutableList<Int>):  {
     if (array.size == 0) return array
     var isSorted = false
     var counter = 0
@@ -31,7 +32,6 @@ fun bubbleSort(array: MutableList<Int>): List<Int> {
         }
         counter++
     }
-    return array
 }
 fun swap(array: MutableList<Int>, i: Int, j: Int) {
     val temp = array[j]
@@ -40,7 +40,7 @@ fun swap(array: MutableList<Int>, i: Int, j: Int) {
 }
 
 
-fun insertionSort(items:MutableList<Int>):List<Int>{
+fun insertionSort(items:MutableList<Int>){
     if (items.isEmpty() || items.size<2){
         return items
     }
@@ -54,5 +54,5 @@ fun insertionSort(items:MutableList<Int>):List<Int>{
         }
         items[i] = item
     }
-    return items
+
 }
