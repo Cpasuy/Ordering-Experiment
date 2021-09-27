@@ -33,6 +33,9 @@ fun timeSorting() {
 
         txt += tempBigSizeBubbleSort +"|"
 
+
+
+
         // Buble sort small time
 
         val beginSmallSizeBubbleSort = System.nanoTime()
