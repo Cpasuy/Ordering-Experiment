@@ -8,13 +8,46 @@ fun main(args: Array<String>) {
     println(result)
 }
 
+fun readFileBigSize(): List<Int>{
+
+    val pathNameSmallSize = "C:/Users/ander/Downloads/kotlin-validation-service/Kotlin/data/BigSize.csv"
+    val miArchivo = File(pathNameSmallSize)
+    val inputStream: InputStream = miArchivo.inputStream()
+    val contenido = inputStream.readBytes().toString(Charset.defaultCharset())
+    contenido.trim()
+    val nums = contenido.split("\n")
+    val listBigSize : MutableList<Int> = ArrayList()
+
+    for(i in 0..nums.size-2){
+
+        listBigSize.add(nums[i].trim().toInt())
+
+    }
 
 
-fun readFileLineByLineUsingForEachLine(fileName: String):List<Int>
-{
-    val f = File(a)
-    val array = arrayOf<Int>(100)
-    File(a).read
+    return listBigSize
+
+}
+
+fun readFileSmallSize(): List<Int>{
+
+    val pathNameSmallSize = "C:/Users/ander/Downloads/kotlin-validation-service/Kotlin/data/SmallSize.csv"
+    val miArchivo = File(pathNameSmallSize)
+    val inputStream: InputStream = miArchivo.inputStream()
+    val contenido = inputStream.readBytes().toString(Charset.defaultCharset())
+    contenido.trim()
+    val nums = contenido.split("\n")
+    val listBigSize : MutableList<Int> = ArrayList()
+
+    for(i in 0..nums.size-2){
+
+        listBigSize.add(nums[i].trim().toInt())
+
+    }
+
+
+    return listBigSize
+
 }
 
 
@@ -33,6 +66,7 @@ fun bubbleSort(array: MutableList<Int>):  {
         counter++
     }
 }
+
 fun swap(array: MutableList<Int>, i: Int, j: Int) {
     val temp = array[j]
     array[j] = array[i]
