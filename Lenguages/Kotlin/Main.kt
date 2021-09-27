@@ -16,50 +16,59 @@ fun timeSorting() {
     val timeForBeginSmallSizeInsertionSort : MutableList<Long> = ArrayList()
 
     val t1 = readFileBigSize()
+    val t2 = readFileSmallSize()
+    val t3 = readFileBigSize()
+    val t4= readFileBigSize()
 
-    for(i in 0..100){
+    val f = File("C:/Users/Financiero/source/repos/Ordering-Experiment/data/TratementsJava.csv")
+    val txt = ""
 
+    for (i in 0 ..100){
+        //Buble sort big size
         val beginBigSizeBubbleSort = System.nanoTime()
         bubbleSort( t1 as MutableList<Int>)
         val endBigSizeBubbleSort = System.nanoTime()
         val tempBigSizeBubbleSort = endBigSizeBubbleSort - beginBigSizeBubbleSort
         timeForBeginBigSizeBubbleSort.add(tempBigSizeBubbleSort)
 
+        txt += tempBigSizeBubbleSort +"|"
 
-    }
+        // Buble sort small time
 
-    val t2 = readFileSmallSize()
-
-    for(i in 0..100){
         val beginSmallSizeBubbleSort = System.nanoTime()
         bubbleSort( t2 as MutableList<Int>)
         val endSmallSizeBubbleSort = System.nanoTime()
         val tempSmallSizeBubbleSort = endSmallSizeBubbleSort - beginSmallSizeBubbleSort
         timeForSmallSizeBubbleSort.add(tempSmallSizeBubbleSort)
 
-    }
+        txt += tempSmallSizeBubbleSort + "|"
 
-    val t3 = readFileBigSize()
+        // Insertion sort Big Size
 
-    for(i in 0..100){
         val beginBigSizeInsertionSort = System.nanoTime()
         insertionSort( t3 as MutableList<Int>)
         val endBigSizeInsertionSort = System.nanoTime()
         val tempBigSizeInsertionSort = endBigSizeInsertionSort - beginBigSizeInsertionSort
         timeForBeginBigSizeInsertionSort.add(tempBigSizeInsertionSort)
 
-    }
-   val t4= readFileBigSize()
-    for(i in 0..100){
+        txt += tempBigSizeInsertionSort + "|"
+
+        // Insertion sort small size
+
         val beginSmallSizeInsertionSort = System.nanoTime()
         insertionSort(t4 as MutableList<Int>)
         val endSmallSizeInsertionSort = System.nanoTime()
         val tempSmallSizeInsertionSort = endSmallSizeInsertionSort - beginSmallSizeInsertionSort
         timeForBeginSmallSizeInsertionSort.add(tempSmallSizeInsertionSort)
 
+        txt += tempSmallSizeInsertionSort + "| \n"
+
+
+
+
     }
 
-
+    File("C:/Users/Financiero/source/repos/Ordering-Experiment/data/TratementsJava.csv").writeText(txt)
 
 }
 
