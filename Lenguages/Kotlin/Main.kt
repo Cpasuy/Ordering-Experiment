@@ -20,7 +20,8 @@ fun timeSorting() {
     val t3 = readFileBigSize()
     val t4= readFileBigSize()
 
-    val f = File("C:/Users/ander/Downloads/kotlin-validation-service/Kotlin/data/TratementsJava.csv")
+
+
     var txt = ""
 
     for (i in 0 ..100){
@@ -64,16 +65,23 @@ fun timeSorting() {
         val tempSmallSizeInsertionSort = endSmallSizeInsertionSort - beginSmallSizeInsertionSort
         timeForBeginSmallSizeInsertionSort.add(tempSmallSizeInsertionSort)
 
-        txt += "$tempSmallSizeInsertionSort |"
+        txt += "$tempSmallSizeInsertionSort |\n"
 
 
 
 
     }
 
-    File("C:/Users/ander/Downloads/kotlin-validation-service/Kotlin/data/TratementsJava.csv").writeText(txt)
+    val f1 = File(".../data/TreatmentsKotlin.csv")
 
 
+    if (!f1.exists()) {
+        f1.createNewFile()
+    }
+    val fileWriter = FileWriter(f1)
+    val bufferedWriter = BufferedWriter(fileWriter)
+    bufferedWriter.write(txt)// <-- Aquí el contenido
+    bufferedWriter.close()
 }
 
 fun readFileBigSize(): List<Int>{
@@ -81,7 +89,7 @@ fun readFileBigSize(): List<Int>{
     val pathNameSmallSize = "C:/Users/ander/Downloads/kotlin-validation-service/Kotlin/data/BigSize.csv"
     val miArchivo = File(pathNameSmallSize)
     val inputStream: InputStream = miArchivo.inputStream()
-    val contenido = inputStream.readBytes().toString(Charset.defaultCharset())
+    val contenido = inputStream.readBytes().toString()
     contenido.trim()
     val nums = contenido.split("\n")
     val listBigSize : MutableList<Int> = ArrayList()
@@ -102,7 +110,7 @@ fun readFileSmallSize(): List<Int>{
     val pathNameSmallSize = "C:/Users/ander/Downloads/kotlin-validation-service/Kotlin/data/SmallSize.csv"
     val miArchivo = File(pathNameSmallSize)
     val inputStream: InputStream = miArchivo.inputStream()
-    val contenido = inputStream.readBytes().toString(Charset.defaultCharset())
+    val contenido = inputStream.readBytes().toString()
     contenido.trim()
     val nums = contenido.split("\n")
     val listBigSize : MutableList<Int> = ArrayList()
@@ -119,20 +127,25 @@ fun readFileSmallSize(): List<Int>{
 }
 
 
-fun bubbleSort(array: MutableList<Int>):  {
-    if (array.size == 0) return array
-    var isSorted = false
-    var counter = 0
-    while (!isSorted) {
-        isSorted = true
-        for (i in 0 until array.size - 1 - counter) {
-            if(array[i] > array[i+1]) {
-                isSorted = false
-                swap(array, i, i + 1)
-            }
-        }
-        counter++
+fun bubbleSort(array: MutableList<Int>)  {
+    if (array.size == 0){
+        // do nothing
     }
+    else {
+        var isSorted = false
+        var counter = 0
+        while (!isSorted) {
+            isSorted = true
+            for (i in 0 until array.size - 1 - counter) {
+                if(array[i] > array[i+1]) {
+                    isSorted = false
+                    swap(array, i, i + 1)
+                }
+            }
+            counter++
+        }
+    }
+
 }
 
 fun swap(array: MutableList<Int>, i: Int, j: Int) {
@@ -142,9 +155,9 @@ fun swap(array: MutableList<Int>, i: Int, j: Int) {
 }
 
 
-fun insertionSort(items:MutableList<Int>){
+fun insertionSort(items:MutableList<Int>) {
     if (items.isEmpty() || items.size<2){
-        return items
+        //do nothing
     }
     for (count in 1..items.count() - 1){
         // println(items)
