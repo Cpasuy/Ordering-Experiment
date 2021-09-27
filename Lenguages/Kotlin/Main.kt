@@ -20,8 +20,8 @@ fun timeSorting() {
     val t3 = readFileBigSize()
     val t4= readFileBigSize()
 
-    val f = File("C:/Users/Financiero/source/repos/Ordering-Experiment/data/TratementsJava.csv")
-    val txt = ""
+    val f = File("C:/Users/ander/Downloads/kotlin-validation-service/Kotlin/data/TratementsJava.csv")
+    var txt = ""
 
     for (i in 0 ..100){
         //Buble sort big size
@@ -31,7 +31,7 @@ fun timeSorting() {
         val tempBigSizeBubbleSort = endBigSizeBubbleSort - beginBigSizeBubbleSort
         timeForBeginBigSizeBubbleSort.add(tempBigSizeBubbleSort)
 
-        txt += tempBigSizeBubbleSort +"|"
+        txt += "$tempBigSizeBubbleSort |"
 
 
 
@@ -44,7 +44,7 @@ fun timeSorting() {
         val tempSmallSizeBubbleSort = endSmallSizeBubbleSort - beginSmallSizeBubbleSort
         timeForSmallSizeBubbleSort.add(tempSmallSizeBubbleSort)
 
-        txt += tempSmallSizeBubbleSort + "|"
+        txt += "$tempSmallSizeBubbleSort |"
 
         // Insertion sort Big Size
 
@@ -54,7 +54,7 @@ fun timeSorting() {
         val tempBigSizeInsertionSort = endBigSizeInsertionSort - beginBigSizeInsertionSort
         timeForBeginBigSizeInsertionSort.add(tempBigSizeInsertionSort)
 
-        txt += tempBigSizeInsertionSort + "|"
+        txt += "$tempBigSizeInsertionSort |"
 
         // Insertion sort small size
 
@@ -64,14 +64,15 @@ fun timeSorting() {
         val tempSmallSizeInsertionSort = endSmallSizeInsertionSort - beginSmallSizeInsertionSort
         timeForBeginSmallSizeInsertionSort.add(tempSmallSizeInsertionSort)
 
-        txt += tempSmallSizeInsertionSort + "| \n"
+        txt += "$tempSmallSizeInsertionSort |"
 
 
 
 
     }
 
-    File("C:/Users/Financiero/source/repos/Ordering-Experiment/data/TratementsJava.csv").writeText(txt)
+    File("C:/Users/ander/Downloads/kotlin-validation-service/Kotlin/data/TratementsJava.csv").writeText(txt)
+
 
 }
 
