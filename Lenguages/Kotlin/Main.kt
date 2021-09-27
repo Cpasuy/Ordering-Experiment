@@ -8,6 +8,61 @@ fun main(args: Array<String>) {
     println(result)
 }
 
+fun timeSorting() {
+
+    val timeForBeginBigSizeBubbleSort : MutableList<Long> = ArrayList()
+    val timeForSmallSizeBubbleSort : MutableList<Long> = ArrayList()
+    val timeForBeginBigSizeInsertionSort : MutableList<Long> = ArrayList()
+    val timeForBeginSmallSizeInsertionSort : MutableList<Long> = ArrayList()
+
+    val t1 = readFileBigSize()
+
+    for(i in 0..100){
+
+        val beginBigSizeBubbleSort = System.nanoTime()
+        bubbleSort( t1 as MutableList<Int>)
+        val endBigSizeBubbleSort = System.nanoTime()
+        val tempBigSizeBubbleSort = endBigSizeBubbleSort - beginBigSizeBubbleSort
+        timeForBeginBigSizeBubbleSort.add(tempBigSizeBubbleSort)
+
+
+    }
+
+    val t2 = readFileSmallSize()
+
+    for(i in 0..100){
+        val beginSmallSizeBubbleSort = System.nanoTime()
+        bubbleSort( t2 as MutableList<Int>)
+        val endSmallSizeBubbleSort = System.nanoTime()
+        val tempSmallSizeBubbleSort = endSmallSizeBubbleSort - beginSmallSizeBubbleSort
+        timeForSmallSizeBubbleSort.add(tempSmallSizeBubbleSort)
+
+    }
+
+    val t3 = readFileBigSize()
+
+    for(i in 0..100){
+        val beginBigSizeInsertionSort = System.nanoTime()
+        insertionSort( t3 as MutableList<Int>)
+        val endBigSizeInsertionSort = System.nanoTime()
+        val tempBigSizeInsertionSort = endBigSizeInsertionSort - beginBigSizeInsertionSort
+        timeForBeginBigSizeInsertionSort.add(tempBigSizeInsertionSort)
+
+    }
+   val t4= readFileBigSize()
+    for(i in 0..100){
+        val beginSmallSizeInsertionSort = System.nanoTime()
+        insertionSort(t4 as MutableList<Int>)
+        val endSmallSizeInsertionSort = System.nanoTime()
+        val tempSmallSizeInsertionSort = endSmallSizeInsertionSort - beginSmallSizeInsertionSort
+        timeForBeginSmallSizeInsertionSort.add(tempSmallSizeInsertionSort)
+
+    }
+
+
+
+}
+
 fun readFileBigSize(): List<Int>{
 
     val pathNameSmallSize = "C:/Users/ander/Downloads/kotlin-validation-service/Kotlin/data/BigSize.csv"
